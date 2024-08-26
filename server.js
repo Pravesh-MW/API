@@ -6,6 +6,7 @@ const app = express();
 connectDB();
 app.use(express.json());
 app.use(cors({ origin: "http://localhost:3000" }));
+app.use(cors({ origin: "https://customers-data-visualization.vercel.app" }));
 app.get("/", (req, res) => {
   res.send("Hello World");
 });

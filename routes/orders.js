@@ -58,7 +58,7 @@ router.get("/total-sales", async (req, res) => {
         let date = element._id;
         let q = Math.floor(Number(date.substr(5, 2)) / 4) + 1;
         let Q = `${date.substr(0, 4)}-Q${q}`;
-        console.log(q);
+        // console.log(q);
         const existingObject = response.find((obj) => obj._id === Q);
         if (existingObject) {
           existingObject.totalSpend += Number(element.totalSpend);
@@ -76,7 +76,7 @@ router.get("/total-sales", async (req, res) => {
 });
 
 router.get("/Growth-Rate", async (req, res) => {
-  console.log("Growth Rate");
+  // console.log("Growth Rate");
   const type = req.query.value;
   let l = 10;
   switch (type) {
@@ -129,7 +129,7 @@ router.get("/Growth-Rate", async (req, res) => {
       return res.json(calculateSalesGrowthRate(result));
     }
     // result = calculateSalesGrowthRate(result);
-    console.log(calculateSalesGrowthRate(result));
+    // console.log(calculateSalesGrowthRate(result));
     res.json(calculateSalesGrowthRate(result));
   } catch (err) {
     console.error(err.message);
